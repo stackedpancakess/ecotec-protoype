@@ -2,14 +2,16 @@ import Button from "./Button";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0f1f3d] text-white">
+    <footer className="bg-[#0f1f3d] text-white min-h-screen flex flex-col relative">
+      {/* Top gradient accent bar */}
+      <div className="h-1 w-full bg-gradient-to-r from-[#00b4a0] via-[#006b8f] to-[#00b4a0]"></div>
       {/* CTA Section */}
-      <div id="cta-section" className="border-b border-[#003d7a] py-16 md:py-20">
+      <div id="cta-section" className="flex-1 flex items-center justify-center border-b border-[#003d7a] py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
             Let&apos;s Build Your Program.
           </h2>
-          <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-sm md:text-base text-gray-300 mb-6 max-w-2xl mx-auto">
             Direct engagement with our facility, team, and leadership. No
             intermediaries.
           </p>
@@ -29,30 +31,30 @@ export default function Footer() {
       </div>
 
       {/* Footer Content */}
-      <div className="py-12 md:py-16">
+      <div className="py-8 md:py-10">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-6">
             {/* Company Info */}
-            <div>
-              <h3 className="font-bold text-lg mb-4">ECOTECASIA</h3>
-              <p className="text-gray-300 text-sm leading-relaxed">
+            <div className="col-span-2 md:col-span-1">
+              <h3 className="font-bold text-base md:text-lg mb-3">ECOTECASIA</h3>
+              <p className="text-gray-300 text-xs md:text-sm leading-relaxed">
                 Global Consumer Electronics Lifecycle Platform powered by EDI.
               </p>
             </div>
 
             {/* Quick Links */}
             <div>
-              <h4 className="font-semibold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-sm text-gray-300">
+              <h4 className="font-semibold text-sm md:text-base mb-3">Quick Links</h4>
+              <ul className="space-y-1.5 text-xs md:text-sm text-gray-300">
                 <li>
-                  <a href="#about" className="hover:text-[#00b4a0] transition">
+                  <a href="#about" className="link-underline text-gray-300 hover:text-white transition">
                     About
                   </a>
                 </li>
                 <li>
                   <a
                     href="#capabilities"
-                    className="hover:text-[#00b4a0] transition"
+                    className="link-underline text-gray-300 hover:text-white transition"
                   >
                     Capabilities
                   </a>
@@ -60,7 +62,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#philippines"
-                    className="hover:text-[#00b4a0] transition"
+                    className="link-underline text-gray-300 hover:text-white transition"
                   >
                     Why Philippines
                   </a>
@@ -70,12 +72,12 @@ export default function Footer() {
 
             {/* Contact */}
             <div>
-              <h4 className="font-semibold mb-4">Contact</h4>
-              <ul className="space-y-2 text-sm text-gray-300">
+              <h4 className="font-semibold text-sm md:text-base mb-3">Contact</h4>
+              <ul className="space-y-1.5 text-xs md:text-sm text-gray-300">
                 <li>
                   <a
                     href="mailto:contact@ecotecasia.com"
-                    className="hover:text-[#00b4a0] transition"
+                    className="link-underline text-gray-300 hover:text-white transition"
                   >
                     Email
                   </a>
@@ -83,13 +85,13 @@ export default function Footer() {
                 <li>
                   <a
                     href="tel:+63-123-4567"
-                    className="hover:text-[#00b4a0] transition"
+                    className="link-underline text-gray-300 hover:text-white transition"
                   >
                     Phone
                   </a>
                 </li>
                 <li>
-                  <a href="#locations" className="hover:text-[#00b4a0] transition">
+                  <a href="#locations" className="link-underline text-gray-300 hover:text-white transition">
                     Locations
                   </a>
                 </li>
@@ -98,20 +100,20 @@ export default function Footer() {
 
             {/* Social */}
             <div>
-              <h4 className="font-semibold mb-4">Follow</h4>
-              <ul className="space-y-2 text-sm text-gray-300">
+              <h4 className="font-semibold text-sm md:text-base mb-3">Follow</h4>
+              <ul className="space-y-1.5 text-xs md:text-sm text-gray-300">
                 <li>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#00b4a0] transition">
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="link-underline text-gray-300 hover:text-white transition">
                     LinkedIn
                   </a>
                 </li>
                 <li>
-                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#00b4a0] transition">
+                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="link-underline text-gray-300 hover:text-white transition">
                     Twitter
                   </a>
                 </li>
                 <li>
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#00b4a0] transition">
+                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="link-underline text-gray-300 hover:text-white transition">
                     Instagram
                   </a>
                 </li>
@@ -120,13 +122,13 @@ export default function Footer() {
           </div>
 
           {/* Bottom Bar */}
-          <div className="border-t border-[#003d7a] pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+          <div className="border-t border-[#003d7a] pt-6 flex flex-col md:flex-row justify-between items-center text-xs md:text-sm text-gray-400">
             <p>&copy; 2024 ECOTECASIA. All rights reserved.</p>
-            <div className="flex gap-6 mt-4 md:mt-0">
-              <a href="#" className="hover:text-white transition">
+            <div className="flex gap-4 mt-3 md:mt-0">
+              <a href="#" className="link-underline text-gray-400 hover:text-white transition">
                 Privacy Policy
               </a>
-              <a href="#" className="hover:text-white transition">
+              <a href="#" className="link-underline text-gray-400 hover:text-white transition">
                 Terms of Service
               </a>
             </div>

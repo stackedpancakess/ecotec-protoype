@@ -27,56 +27,79 @@ export default function GlobalPresence() {
   ];
 
   return (
-    <section id="locations" className="w-full py-16 md:py-20 lg:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="mb-12 md:mb-16">
-          <p className="text-[#00b4a0] text-sm font-semibold tracking-wider mb-2">
+    <section id="locations" className="w-full min-h-screen flex items-center bg-white py-8 md:py-12">
+      <div className="max-w-7xl mx-auto px-6 w-full">
+        <div className="mb-6 md:mb-8">
+          <p className="text-[#00b4a0] text-xs md:text-sm font-semibold tracking-wider mb-1">
             Global Presence
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0f1f3d] mb-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0f1f3d] mb-2">
             Where We Operate
           </h2>
-          <p className="text-base md:text-lg text-gray-600 max-w-2xl leading-relaxed">
+          <p className="text-sm md:text-base text-gray-600 max-w-2xl leading-relaxed">
             From our Singapore commercial headquarters to our Philippine operations facility and Miami inbound hub — ECOTECASIA supports global programs end to end.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 mb-8">
           {locations.map((location, index) => (
             <div
               key={index}
-              className="bg-linear-to-br from-[#0f1f3d] to-[#003d7a] rounded-lg p-8 text-white shadow-lg hover:shadow-xl transition duration-300"
+              className="bg-linear-to-br from-[#0f1f3d] to-[#003d7a] rounded-lg p-6 md:p-7 text-white shadow-lg card-hover-lift"
             >
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-[#00b4a0] rounded-lg mb-4" role="img" aria-label={`${location.title} — ${location.subtitle}`}>
-                <span className="text-lg font-bold text-[#0f1f3d]">
+              <div className="inline-flex items-center justify-center w-10 h-10 bg-[#00b4a0] rounded-lg mb-3" role="img" aria-label={`${location.title} — ${location.subtitle}`}>
+                <span className="text-sm font-bold text-[#0f1f3d]">
                   {location.label}
                 </span>
               </div>
-              <h3 className="text-2xl font-bold mb-2">{location.title}</h3>
-              <p className="text-[#00b4a0] text-sm font-semibold mb-4">
+              <h3 className="text-xl md:text-2xl font-bold mb-1">{location.title}</h3>
+              <p className="text-[#00b4a0] text-xs md:text-sm font-semibold mb-3">
                 {location.subtitle}
               </p>
-              <p className="text-gray-200 leading-relaxed">{location.description}</p>
+              <p className="text-gray-300 leading-relaxed text-sm md:text-base tracking-wide font-light">{location.description}</p>
             </div>
           ))}
         </div>
 
         {/* Map Section */}
-        <div className="bg-gray-100 rounded-lg p-8 text-center">
-          <p className="text-gray-600 mb-2">Our Network</p>
-          <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12">
-            <div>
-              <p className="font-semibold text-[#0f1f3d]">Singapore</p>
-              <p className="text-sm text-gray-600">HQ</p>
+        <div className="bg-gray-100 rounded-lg p-5 md:p-6 text-center border border-gray-200">
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <div className="w-6 h-0.5 bg-[#00b4a0]"></div>
+            <p className="text-gray-600 text-sm md:text-base font-semibold">Our Network</p>
+            <div className="w-6 h-0.5 bg-[#00b4a0]"></div>
+          </div>
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8">
+            <div className="flex flex-col items-center">
+              <div className="w-10 h-10 bg-[#0f1f3d] rounded-full flex items-center justify-center mb-2">
+                <span className="text-[#00b4a0] text-xs font-bold">SG</span>
+              </div>
+              <p className="font-semibold text-[#0f1f3d] text-sm md:text-base">Singapore</p>
+              <p className="text-xs md:text-sm text-gray-500">HQ</p>
             </div>
-            <div className="text-2xl text-gray-400">→</div>
-            <div>
-              <p className="font-semibold text-[#0f1f3d]">Biñan, Philippines</p>
-              <p className="text-sm text-gray-600">Operations</p>
+            <div className="flex flex-col items-center text-gray-400">
+              <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+              <span className="text-xs mt-1">3-5 day transit</span>
             </div>
-            <div className="text-2xl text-gray-400">→</div>
-            <div>
-              <p className="font-semibold text-[#0f1f3d]">Miami, USA</p>
-              <p className="text-sm text-gray-600">Sorting & Receiving</p>
+            <div className="flex flex-col items-center">
+              <div className="w-10 h-10 bg-[#00b4a0] rounded-full flex items-center justify-center mb-2">
+                <span className="text-[#0f1f3d] text-xs font-bold">PH</span>
+              </div>
+              <p className="font-semibold text-[#0f1f3d] text-sm md:text-base">Biñan, Philippines</p>
+              <p className="text-xs md:text-sm text-gray-500">Operations</p>
+            </div>
+            <div className="flex flex-col items-center text-gray-400">
+              <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+              <span className="text-xs mt-1">Westbound logistics</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="w-10 h-10 bg-[#003d7a] rounded-full flex items-center justify-center mb-2">
+                <span className="text-[#00b4a0] text-xs font-bold">US</span>
+              </div>
+              <p className="font-semibold text-[#0f1f3d] text-sm md:text-base">Miami, USA</p>
+              <p className="text-xs md:text-sm text-gray-500">Sorting & Receiving</p>
             </div>
           </div>
         </div>

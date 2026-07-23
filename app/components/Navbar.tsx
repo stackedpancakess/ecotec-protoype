@@ -43,9 +43,10 @@ export default function Navbar() {
             <a
               key={link.label}
               href={link.href}
-              className="text-white text-sm hover:text-[#00b4a0] transition duration-300"
+              className="text-white text-sm hover:text-[#00b4a0] transition duration-300 relative group"
             >
               {link.label}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#00b4a0] group-hover:w-full transition-all duration-300"></span>
             </a>
           ))}
         </div>
@@ -53,32 +54,38 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-white flex flex-col gap-1"
+          className="md:hidden text-white flex flex-col gap-1 p-2"
           aria-label="Toggle menu"
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
         >
-          <span className="w-6 h-0.5 bg-white block"></span>
-          <span className="w-6 h-0.5 bg-white block"></span>
-          <span className="w-6 h-0.5 bg-white block"></span>
+          <span className={`w-6 h-0.5 bg-white block transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
+          <span className={`w-6 h-0.5 bg-white block transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`}></span>
+          <span className={`w-6 h-0.5 bg-white block transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
         </button>
       </nav>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <div id="mobile-menu" className="md:hidden bg-[#0f1f3d] border-t border-[#003d7a] px-6 py-4 flex flex-col gap-4">
+      <div
+        id="mobile-menu"
+        className={`md:hidden bg-[#0f1f3d] border-t border-[#003d7a] overflow-hidden transition-all duration-300 ${
+          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <div className="px-6 py-4 flex flex-col gap-4">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="text-white text-sm hover:text-[#00b4a0] transition"
+              className="text-white text-sm hover:text-[#00b4a0] transition relative group"
               onClick={() => setIsOpen(false)}
             >
               {link.label}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#00b4a0] group-hover:w-full transition-all duration-300"></span>
             </a>
           ))}
         </div>
-      )}
+      </div>
     </header>
   );
 }

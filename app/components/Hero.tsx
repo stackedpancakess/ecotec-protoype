@@ -2,7 +2,18 @@ import Button from "./Button";
 
 export default function Hero() {
   return (
-    <section className="hero-section relative w-full min-h-screen flex items-center pt-20">
+    <section className="hero-section relative w-full min-h-screen flex items-start pt-20 overflow-hidden">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&q=85')",
+        }}
+      />
+      {/* Vignette overlay from top-left to right */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0f1f3d]/95 via-[#0f1f3d]/80 to-transparent" />
+      {/* Additional dark overlay for text readability */}
+      <div className="absolute inset-0 bg-black/30" />
       <div className="max-w-7xl mx-auto px-6 py-18 w-full relative z-10">
         <div className="max-w-2xl">
           {/* Badge */}
